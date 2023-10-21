@@ -1,0 +1,1 @@
+https://github.com/isis3710-uniandes/tutoriales/wiki/%5BTesting%5D-Testing-in-React
