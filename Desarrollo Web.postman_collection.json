@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "27932f22-32c8-4409-b32b-b2d0342aa984",
+		"name": "Desarrollo Web",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23653307"
+	},
+	"item": [
+		{
+			"name": "/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/products",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/products",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/products",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/products",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/products/id",
+					"path": [
+						"products",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/id Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/products/id",
+					"path": [
+						"products",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/id Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/products/id",
+					"path": [
+						"products",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/products/id Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/products/id",
+					"path": [
+						"products",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComentsID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/commets/id",
+					"path": [
+						"commets",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComentsID Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/commets/id",
+					"path": [
+						"commets",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComentsID Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/commets/id",
+					"path": [
+						"commets",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ComentsID Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/commets/id",
+					"path": [
+						"commets",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/user/id",
+					"path": [
+						"user",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserID Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/user/id",
+					"path": [
+						"user",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserID Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/user/id",
+					"path": [
+						"user",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserID Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/user/id",
+					"path": [
+						"user",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carritoIID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/carrito/id",
+					"path": [
+						"carrito",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carritoIID Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/carrito/id",
+					"path": [
+						"carrito",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carritoIID Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/carrito/id",
+					"path": [
+						"carrito",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carritoIID Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/carrito/id",
+					"path": [
+						"carrito",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favoritosID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/favoritos/id",
+					"path": [
+						"favoritos",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favoritosID Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/favoritos/id",
+					"path": [
+						"favoritos",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favoritosID Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/favoritos/id",
+					"path": [
+						"favoritos",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "favoritosID Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/favoritos/id",
+					"path": [
+						"favoritos",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprasID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/compras/id",
+					"path": [
+						"compras",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprasID Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "/compras/id",
+					"path": [
+						"compras",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprasID Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "/compras/id",
+					"path": [
+						"compras",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprasID Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "/compras/id",
+					"path": [
+						"compras",
+						"id"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
