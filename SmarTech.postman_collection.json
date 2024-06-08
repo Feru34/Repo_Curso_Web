@@ -1,0 +1,2080 @@
+{
+	"info": {
+		"_postman_id": "f838c4d5-e28f-4d81-b851-dccbcf5c0320",
+		"name": "SmarTech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23508375",
+		"_collection_link": "https://cloudy-zodiac-116298.postman.co/workspace/New-Team-Workspace~65f7f054-ba4a-4193-80ab-d1415ed20e1f/collection/23514222-f838c4d5-e28f-4d81-b851-dccbcf5c0320?action=share&source=collection_link&creator=23508375"
+	},
+	"item": [
+		{
+			"name": "UserTests",
+			"item": [
+				{
+					"name": "Get all users",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Camilo\",\r\n    \"username\":\"camilol47\",\r\n    \"document\": 12345,\r\n    \"age\":21,\r\n    \"email\":\"camilo@hotmail.com\",\r\n    \"phone\":\"3156434118\",\r\n    \"seller\":true,\r\n    \"password\":\"12345\",\r\n    \"image\":\"https://i.pinimg.com/originals/fe/32/73/fe3273d3b2b7fc4028463d04d6b843f2.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite",
+			"item": [
+				{
+					"name": "Create Favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"9b2b4a50-6f7c-422f-ae51-a11eb3626092\",\r\n  \"totalProducts\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invalid One",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"9b2b4a50-6f7c-422f-ae51-a11eb3626092\",\r\n  \"totalProducts\":11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"   pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product To favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092/products/66d6cbf6-5e1b-4cfe-a294-47f5f7472741",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+								"products",
+								"66d6cbf6-5e1b-4cfe-a294-47f5f7472741"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product to favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"   pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092/products/66d6cbf6-5e1b-4cfe-a294-47f5f7472741",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+								"products",
+								"66d6cbf6-5e1b-4cfe-a294-47f5f7472741"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products from Favorito Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User To Favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092/users/317f0744-36ab-4cba-b7c6-a5b99597bea6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+								"users",
+								"317f0744-36ab-4cba-b7c6-a5b99597bea6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favorite from User ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Favorite with userID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"9b2b4a50-6f7c-422f-ae51-a11eb3626092\",\r\n  \"totalProducts\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/317f0744-36ab-4cba-b7c6-a5b99597bea6/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"317f0744-36ab-4cba-b7c6-a5b99597bea6",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"66d6cbf6-5e1b-4cfe-a294-47f5f7472741\",\r\n    \"name\":\"apple watch\",\r\n    \"title\":\"lates apple watch\",\r\n    \"description\": \"this is the lates apple watch with 8gb ram\",\r\n    \"price\":1200500,\r\n    \"rating\":4.5,\r\n    \"stock\":20.3,\r\n    \"category\":\"cellphone\",\r\n    \"thumbnail\": \"https://www.apple.com/newsroom/images/product/watch/standard/Apple_watch-series7_hero_09142021_big.jpg.slideshow-medium_2x.jpg\",\r\n    \"estado\" :\"ddd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SellProduct",
+			"item": [
+				{
+					"name": "Post SellProducts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"totalSell\":0,\r\n  \"totalItems\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/sellproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"sellproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all SellProducts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"   pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/sellproduct/96c00558-f00a-4957-8154-96a3e5325c6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"sellproduct",
+								"96c00558-f00a-4957-8154-96a3e5325c6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"totalSell\":0,\r\n  \"totalItems\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/sellproduct/96c00558-f00a-4957-8154-96a3e5325c6c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"sellproduct",
+								"96c00558-f00a-4957-8154-96a3e5325c6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User To  SellProduct Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092/users/317f0744-36ab-4cba-b7c6-a5b99597bea6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+								"users",
+								"317f0744-36ab-4cba-b7c6-a5b99597bea6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favorite from User ID Copy",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create SellProducts with userID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"96c00558-f00a-4957-8154-96a3e5325c6c\",\r\n  \"totalSell\":0,\r\n  \"totalItems\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/sellproduct/317f0744-36ab-4cba-b7c6-a5b99597bea6/sellproducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"sellproduct",
+								"317f0744-36ab-4cba-b7c6-a5b99597bea6",
+								"sellproducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product To  SellProduct Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/favorite/9b2b4a50-6f7c-422f-ae51-a11eb3626092/users/317f0744-36ab-4cba-b7c6-a5b99597bea6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"favorite",
+								"9b2b4a50-6f7c-422f-ae51-a11eb3626092",
+								"users",
+								"317f0744-36ab-4cba-b7c6-a5b99597bea6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Create an address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"addressId\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Armenia\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"address"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create an address",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Armenia\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"address"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-Q5Ow7+xO+EqaSl48agZOPj1ZLKc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:16:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"address\": \"Dirección 1\",\n    \"city\": \"Armenia\",\n    \"country\": \"Colombia\",\n    \"postalCode\": \"111156\",\n    \"id\": \"b38b755d-b1c3-4d53-be95-601499a9ca7c\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get an address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/address/{{addressId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"address",
+								"{{addressId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get an address",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/address/{{addressId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"address",
+										"{{addressId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-RkEC4cvn7SjzZoFzNBedQwFFu3M\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:18:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b8071e43-924d-4c4c-9f99-84f448d30b45\",\n    \"address\": \"Dirección 1\",\n    \"city\": \"Armenia\",\n    \"country\": \"Colombia\",\n    \"postalCode\": \"111156\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all addresses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Number of addresses > ' + 0, function () {\r",
+									"   var data = pm.response.json()\r",
+									"   pm.expect(data.length).to.greaterThan(0)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"address"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all addresses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"address"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"107-5GwTrmZsj7JFQqVN8UQe0QKJKqw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:19:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"b38b755d-b1c3-4d53-be95-601499a9ca7c\",\n        \"address\": \"Dirección 1\",\n        \"city\": \"Armenia\",\n        \"country\": \"Colombia\",\n        \"postalCode\": \"111156\"\n    },\n    {\n        \"id\": \"b8071e43-924d-4c4c-9f99-84f448d30b45\",\n        \"address\": \"Dirección 1\",\n        \"city\": \"Armenia\",\n        \"country\": \"Colombia\",\n        \"postalCode\": \"111156\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update an address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Maracaibo\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/address/{{addressId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"address",
+								"{{addressId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update an address",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Maracaibo\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/address/{{addressId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"address",
+										"{{addressId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84-RgVEIHgTq5TatFb5AHB74Xv+7qo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:21:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"b8071e43-924d-4c4c-9f99-84f448d30b45\",\n    \"address\": \"Dirección 1\",\n    \"city\": \"Maracaibo\",\n    \"country\": \"Colombia\",\n    \"postalCode\": \"111156\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete an address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"   pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/address/{{addressId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"address",
+								"{{addressId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete an address",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/address/{{addressId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"address",
+										"{{addressId}}"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:22:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User-Address",
+			"item": [
+				{
+					"name": "Create an address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"addressUserId\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Armenia\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"address"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create an address",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Armenia\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"address"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-Q5Ow7+xO+EqaSl48agZOPj1ZLKc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:16:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"address\": \"Dirección 1\",\n    \"city\": \"Armenia\",\n    \"country\": \"Colombia\",\n    \"postalCode\": \"111156\",\n    \"id\": \"b38b755d-b1c3-4d53-be95-601499a9ca7c\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create an address 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"addressUserId2\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Armenia\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"address"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create an address",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"address\" : \"Dirección 1\",\r\n   \"city\" : \"Armenia\",\r\n   \"country\" : \"Colombia\",\r\n   \"postalCode\" : \"111156\"   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"address"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-Q5Ow7+xO+EqaSl48agZOPj1ZLKc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:16:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"address\": \"Dirección 1\",\n    \"city\": \"Armenia\",\n    \"country\": \"Colombia\",\n    \"postalCode\": \"111156\",\n    \"id\": \"b38b755d-b1c3-4d53-be95-601499a9ca7c\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = pm.response.json()\r",
+									"pm.globals.set(\"userAddressId\", data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Camilo\",\r\n    \"username\":\"camilol47\",\r\n    \"document\": 12345,\r\n    \"age\":21,\r\n    \"email\":\"camilo@hotmail.com\",\r\n    \"phone\":\"3156434118\",\r\n    \"seller\":true,\r\n    \"password\":\"12345\",\r\n    \"image\":\"https://i.pinimg.com/originals/fe/32/73/fe3273d3b2b7fc4028463d04d6b843f2.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create a user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Camilo\",\r\n    \"username\":\"camilol47\",\r\n    \"document\": 12345,\r\n    \"age\":21,\r\n    \"email\":\"camilo@hotmail.com\",\r\n    \"phone\":\"3156434118\",\r\n    \"seller\":true,\r\n    \"password\":\"12345\",\r\n    \"image\":\"https://i.pinimg.com/originals/fe/32/73/fe3273d3b2b7fc4028463d04d6b843f2.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-n+TtBOa+X3/fiwjINF+6EkWkzQE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:26:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Camilo\",\n    \"username\": \"camilol47\",\n    \"document\": 12345,\n    \"age\": 21,\n    \"email\": \"camilo@hotmail.com\",\n    \"phone\": \"3156434118\",\n    \"seller\": true,\n    \"password\": \"12345\",\n    \"image\": \"https://i.pinimg.com/originals/fe/32/73/fe3273d3b2b7fc4028463d04d6b843f2.jpg\",\n    \"id\": \"e0c6c153-8d83-431e-ba8d-230c8ab7ca55\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add address to user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses/{{addressUserId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userAddressId}}",
+								"addresses",
+								"{{addressUserId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add address to user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses/{{addressUserId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"{{userAddressId}}",
+										"addresses",
+										"{{addressUserId}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "425"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a9-m6b5t/BBKP+gH/GmBQqImNdwgPg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:27:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"e0c6c153-8d83-431e-ba8d-230c8ab7ca55\",\n    \"name\": \"Camilo\",\n    \"username\": \"camilol47\",\n    \"document\": 12345,\n    \"age\": 21,\n    \"email\": \"camilo@hotmail.com\",\n    \"phone\": \"3156434118\",\n    \"seller\": true,\n    \"password\": \"12345\",\n    \"image\": \"https://i.pinimg.com/originals/fe/32/73/fe3273d3b2b7fc4028463d04d6b843f2.jpg\",\n    \"addresses\": [\n        {\n            \"id\": \"d9b3d253-671a-493b-b7d6-941080357e32\",\n            \"address\": \"Dirección 1\",\n            \"city\": \"Armenia\",\n            \"country\": \"Colombia\",\n            \"postalCode\": \"111156\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get address by addressId userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses/{{addressUserId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userAddressId}}",
+								"addresses",
+								"{{addressUserId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get addresses by userId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses/{{addressUserId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"{{userAddressId}}",
+										"addresses",
+										"{{addressUserId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "130"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"82-zJFQGRlaxvlyrTFU9rYkLLc7wCU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:28:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"d9b3d253-671a-493b-b7d6-941080357e32\",\n    \"address\": \"Dirección 1\",\n    \"city\": \"Armenia\",\n    \"country\": \"Colombia\",\n    \"postalCode\": \"111156\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all addresses by userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('Number of addresses > ' + 0, function () {\r",
+									"   var data = pm.response.json()\r",
+									"   pm.expect(data.length).to.greaterThan(0)\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userAddressId}}",
+								"addresses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all addresses by userId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"{{userAddressId}}",
+										"addresses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "132"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84-IiFhsFSJuegj69D3LMJA+dPSf1o\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:30:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"d9b3d253-671a-493b-b7d6-941080357e32\",\n        \"address\": \"Dirección 1\",\n        \"city\": \"Armenia\",\n        \"country\": \"Colombia\",\n        \"postalCode\": \"111156\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Associate addressesUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"   pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\" : \"{{addressUserId2}}\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userAddressId}}",
+								"addresses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Associate addressesUserId",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\" : \"{{addressUserId2}}\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"{{userAddressId}}",
+										"addresses"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "340"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"154-p6Lajl34BCYyood211wejIPbyE0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:34:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"e6389ffc-0fd5-4565-8658-72d2d2960e33\",\n    \"name\": \"Camilo\",\n    \"username\": \"camilol47\",\n    \"document\": 12345,\n    \"age\": 21,\n    \"email\": \"camilo@hotmail.com\",\n    \"phone\": \"3156434118\",\n    \"seller\": true,\n    \"password\": \"12345\",\n    \"image\": \"https://i.pinimg.com/originals/fe/32/73/fe3273d3b2b7fc4028463d04d6b843f2.jpg\",\n    \"addresses\": [\n        {\n            \"id\": \"142e3633-68cc-4a9a-a99c-6465cf2997e8\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete address from userId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"   pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses/{{addressUserId2}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{userAddressId}}",
+								"addresses",
+								"{{addressUserId2}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete address from userId",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/{{userAddressId}}/addresses/{{addressUserId2}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"{{userAddressId}}",
+										"addresses",
+										"{{addressUserId2}}"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Dec 2023 19:40:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
